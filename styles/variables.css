@@ -1,0 +1,111 @@
+:root {
+  --body-bg: #f9f9f9;
+  --elements-bg: #fefefe;
+  --elements-border-radius: 15px;
+  --elements-box-shadow: 0 0 20px -10px;
+
+  --element-bg-color-transition-duration: 0.2s;
+  --element-box-shadow-transition-duration: 0.2s;
+  --element-offset: 15px;
+  --element-padding: 15px;
+  
+  --container-vertical-padding: 10px;
+  --container-horizontal-padding: 15px;
+  --container-padding: var(--container-vertical-padding) var(--container-horizontal-padding);
+
+  --btn-box-shadow: 0 0 5px -2px;
+  --btn-padding: 12px;
+  --btn-font-size: 18px;
+  --btn-border-radius: 10px;
+  --btn-bg-color-transition-duration: var(--element-bg-color-transition-duration);
+  --btn-hover-bg-color: #e7f4ff;
+  --btn-active-bg-color: #a0d4ff;
+  --btn-box-shadow-transition-duration: var(--element-box-shadow-transition-duration);
+  --btn-active-box-shadow: 0 0 5px -4px;
+  --btn-disabled-color: #aaa;
+  --btn-color-transition-duration: 0.2s;
+
+  --list-manager-bg: var(--elements-bg);
+  --list-manager-border-radius: var(--elements-border-radius);
+  --list-manager-box-shadow: var(--elements-box-shadow);
+  --list-manager-width: 350px;
+  --list-manager-padding: var(--element-padding);
+  --list-manager-title-font-size: 24px;
+  --list-manager-title-font-weight: 500;
+  --list-manager-header-margin-bottom: 20px;
+  --list-manager-margin-right: var(--element-offset);
+  --list-manager-create-list-btn-margin-bottom: 20px;
+
+  --list-editor-padding: var(--element-padding);
+  --list-editor-header-padding: var(--list-editor-padding);
+  --list-editor-title-font-size: 28px;
+  --list-editor-title-font-weight: 500;
+  --list-editor-header-margin-bottom: var(--element-offset);
+
+  --task-manager-plug-font-weight: 500;
+  --task-manager-plug-line-height: 150%;
+  --task-manager-plug-font-size: 32px;
+  --task-manager-plug-opacity: 0.3;
+  --task-manager-plug-width: 430px;
+  --task-manager-plug-padding-left: 150px;
+
+  --text-color: #333;
+
+  --popup-animation-duration: 0.4s;
+  --popup-fade-in-duration: var(--popup-animation-duration);
+  --popup-fade-out-duration: var(--popup-animation-duration);
+  --popup-bg-color: rgba(0, 0, 0, 0.2);
+  --popup-padding: var(--element-padding);
+  --popup-wrapper-bg-color: var(--elements-bg);
+  --popup-wrapper-padding: var(--element-padding);
+  --popup-wrapper-border-radius: var(--elements-border-radius);
+  --popup-wrapper-box-shadow: var(--elements-box-shadow);
+  --popup-wrapper-width: 300px;
+  --popup-title-font-weight: 500;
+  --popup-title-font-size: 24px;
+  --popup-title-margin-bottom: 20px;
+  --popup-input-margin-bottom: 20px;
+  --popup-btn-margin-right: 20px;
+  --popup-btn-font-weight: 500;
+  --popup-btn-font-size: 14px;
+  --popup-btn-color: #2b64a9;
+  --popup-btn-padding: var(--btn-padding);
+  --popup-btn-border-radius: var(--btn-border-radius);
+  --popup-btn-hover-bg-color: var(--btn-hover-bg-color);
+  --popup-btn-active-bg-color: var(--btn-active-bg-color);
+  --popup-btn-bg-color-transition-duration: var(--btn-bg-color-transition-duration);
+  --popup-btn-disabled-color: var(--btn-disabled-color);
+  --popup-btn-color-transition-duration: var(--btn-color-transition-duration);
+
+  --input-text-padding: 5px;
+  --input-text-border: 2px solid var(--text-color);
+  --input-text-border-radius: 4px;
+  --input-text-font-size: 16px;
+  --input-text-border-color-transition-duration: 0.2s;
+  --input-text-focus-border-color: #2b64a9;
+
+  --new-list-popup-wrapper-width: var(--popup-wrapper-width);
+  --new-list-popup-input-margin-bottom: var(--popup-input-margin-bottom);
+
+  --user-list-padding: var(--element-padding);
+  --user-list-border-radius: var(--elements-border-radius);
+  --user-list-box-shadow: var(--btn-box-shadow);
+  --user-list-margin-bottom: 15px;
+  --user-list-active-box-shadow: 0 0 5px -4px;
+  --user-list-hover-transform: translateY(2px);
+  --user-list-transform-transition-duration: 0.2s;
+  --user-list-box-shadow-transition-duration: 0.2s;
+  --user-list-name-font-weight: 400;
+  --user-list-name-font-size: 17px;
+  --user-list-btn-size: 20px;
+  --user-list-btn-margin-right: 12px;
+  --user-list-btn-hover-bg-color: var(--btn-hover-bg-color);
+  --user-list-btn-active-bg-color: var(--btn-active-bg-color);
+  --user-list-name-width-transition-duration: 0.2s;
+  --user-list-control-width-transition-duration: 0.2s;
+  --user-list-fade-out-duration: 0.2s;
+  --user-list-collapse-duration: 0.2s;
+
+  --rename-list-popup-wrapper-width: var(--popup-wrapper-width);
+  --rename-list-popup-input-margin-bottom: var(--popup-input-margin-bottom);
+}

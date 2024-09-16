@@ -1,0 +1,7 @@
+.rename-list-popup__wrapper {
+  width: var(--rename-list-popup-wrapper-width);
+}
+
+.rename-list-popup__input {
+  margin-bottom: var(--rename-list-popup-input-margin-bottom);
+}

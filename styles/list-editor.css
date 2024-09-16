@@ -1,0 +1,51 @@
+.list-editor {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.list-editor__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--list-editor-header-margin-bottom);
+  padding: var(--list-editor-padding);
+  border-radius: var(--elements-border-radius);
+  background-color: var(--elements-bg);
+  box-shadow: var(--elements-box-shadow);
+}
+
+.list-editor__title {
+  font-weight: var(--list-editor-title-font-weight);
+  font-size: var(--list-editor-title-font-size);
+}
+
+.list-editor__main {
+  flex-grow: 1;
+}
+
+.task-manager {
+  position: relative;
+  padding: var(--list-editor-padding);
+  border-radius: var(--elements-border-radius);
+  background-color: var(--elements-bg);
+  box-shadow: var(--elements-box-shadow);
+}
+
+.task-manager__plug {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding-left: var(--task-manager-plug-padding-left);
+  width: var(--task-manager-plug-width);
+  background-image: url("../images/task-manager-plug-bg.png");
+  background-position: 0px center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-weight: var(--task-manager-plug-font-weight);
+  line-height: var(--task-manager-plug-line-height);
+  font-size: var(--task-manager-plug-font-size);
+  text-align: center;
+  opacity: var(--task-manager-plug-opacity);
+  transform: translate(-50%, -50%);
+}

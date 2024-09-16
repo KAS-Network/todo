@@ -1,0 +1,189 @@
+.list-manager {
+  display: flex;
+  flex-direction: column;
+  margin-right: var(--list-manager-margin-right);
+  padding: var(--list-manager-padding);
+  width: var(--list-manager-width);
+  border-radius: var(--list-manager-border-radius);
+  background-color: var(--list-manager-bg);
+  box-shadow: var(--list-manager-box-shadow);
+}
+
+.list-manager__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--list-manager-header-margin-bottom);
+}
+
+.list-manager__logo {
+  margin-right: 20px;
+}
+
+.list-manager__title {
+  font-weight: var(--list-manager-title-font-weight);
+  font-size: var(--list-manager-title-font-size);
+}
+
+.list-manager__create-list-btn {
+  margin-bottom: var(--list-manager-create-list-btn-margin-bottom);
+}
+
+.list-manager__create-list-btn-text {
+  position: relative;
+  display: flex;
+  padding-left: 25px;
+}
+
+.list-manager__create-list-btn-text::before,
+.list-manager__create-list-btn-text::after {
+  content: "";
+  position: absolute;
+  background-color: var(--text-color);
+}
+
+.list-manager__create-list-btn-text::before {
+  top: 50%;
+  left: 7px;
+  width: 2px;
+  height: 16px;
+  transform: translateY(-50%);
+}
+
+.list-manager__create-list-btn-text::after {
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 2px;
+  transform: translate(0, -50%);
+}
+
+.list-manager__content {
+  margin: 0 -3px;
+  padding: 3px;
+  height: calc(100vh - 2 * var(--container-vertical-padding) - 2 * var(--list-manager-padding) - 48px - var(--list-manager-header-margin-bottom) - 42px - var(--list-manager-create-list-btn-margin-bottom));
+  overflow: auto;
+}
+
+@keyframes user-list-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes user-list-collapse {
+  from {
+    margin-bottom: var(--user-list-margin-bottom);
+    height: calc(var(--user-list-btn-size) + 2 * var(--user-list-padding));
+  }
+
+  to {
+    margin-bottom: 0;
+    height: 0;
+  }
+}
+
+.user-list {
+  margin-bottom: var(--user-list-margin-bottom);
+  border-radius: var(--user-list-border-radius);
+  box-shadow: var(--user-list-box-shadow);
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform var(--user-list-transform-transition-duration) ease-in-out,
+    box-shadow var(--user-list-box-shadow-transition-duration) ease-in-out;
+}
+
+.user-list:hover {
+  transform: var(--user-list-hover-transform);
+}
+
+.user-list:active {
+  box-shadow: var(--user-list-active-box-shadow);
+}
+
+.user-list_fade-out {
+  opacity: 0;
+  animation-name: user-list-fade-out;
+  animation-duration: var(--user-list-fade-out-duration);
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.user-list_collapse {
+  animation-name: user-list-collapse;
+  animation-duration: var(--user-list-collapse-duration);
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.user-list:last-child {
+  margin-bottom: 0;
+}
+
+.user-list__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--user-list-padding);
+}
+
+.user-list__name {
+  width: 100%;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  line-height: 100%;
+  font-weight: var(--user-list-name-font-weight);
+  font-size: var(--user-list-name-font-size);
+  overflow: hidden;
+  transition: width var(--user-list-name-width-transition-duration) ease-in-out;
+}
+
+.user-list:hover .user-list__name {
+  width: calc(100% - 62px);
+}
+
+.user-list__control {
+  display: flex;
+  width: 0;
+  overflow: hidden;
+  transition: width var(--user-list-control-width-transition-duration) ease-in-out;
+}
+
+.user-list:hover .user-list__control {
+  width: 52px
+}
+
+.user-list__btn {
+  flex-shrink: 0;
+  margin-right: var(--user-list-btn-margin-right);
+  width: var(--user-list-btn-size);
+  height: var(--user-list-btn-size);
+  border-radius: 2px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.user-list__btn:hover {
+  background-color: var(--user-list-btn-hover-bg-color);
+}
+
+.user-list__btn:active {
+  background-color: var(--user-list-btn-active-bg-color);
+}
+
+.user-list__btn:last-child {
+  margin-right: 0;
+}
+
+.user-list__rename-btn {
+  background-image: url("../images/rename-icon.svg");
+}
+
+.user-list__delete-btn {
+  background-image: url("../images/delete-icon.svg");
+}

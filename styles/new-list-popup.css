@@ -1,0 +1,7 @@
+.new-list-popup__wrapper {
+  width: var(--new-list-popup-wrapper-width);
+}
+
+.new-list-popup__input {
+  margin-bottom: var(--new-list-popup-input-margin-bottom);
+}
