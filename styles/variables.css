@@ -101,11 +101,37 @@
   --user-list-btn-margin-right: 12px;
   --user-list-btn-hover-bg-color: var(--btn-hover-bg-color);
   --user-list-btn-active-bg-color: var(--btn-active-bg-color);
-  --user-list-name-width-transition-duration: 0.2s;
   --user-list-control-width-transition-duration: 0.2s;
   --user-list-fade-out-duration: 0.2s;
   --user-list-collapse-duration: 0.2s;
 
   --rename-list-popup-wrapper-width: var(--popup-wrapper-width);
   --rename-list-popup-input-margin-bottom: var(--popup-input-margin-bottom);
+
+  --new-task-popup-wrapper-width: var(--popup-wrapper-width);
+  --new-task-popup-input-margin-bottom: var(--popup-input-margin-bottom);
+
+  --add-task-btn-margin-bottom: 20px;
+  --task-padding: var(--element-padding);
+  --task-border-radius: var(--elements-border-radius);
+  --task-box-shadow: var(--btn-box-shadow);
+  --task-margin-bottom: 15px;
+  --task-active-box-shadow: 0 0 5px -4px;
+  --task-hover-transform: translateY(2px);
+  --task-transform-transition-duration: 0.2s;
+  --task-box-shadow-transition-duration: 0.2s;
+  --task-content-font-weight: 400;
+  --task-content-font-size: 17px;
+  --task-btn-size: 20px;
+  --task-btn-margin-right: 12px;
+  --task-done-btn-border: 2px solid var(--text-color);
+  --task-done-btn-border-radius: 4px;
+  --task-btn-hover-bg-color: var(--btn-hover-bg-color);
+  --task-btn-active-bg-color: var(--btn-active-bg-color);
+  --task-control-width-transition-duration: 0.2s;
+  --task-fade-out-duration: 0.2s;
+  --task-collapse-duration: 0.2s;
+
+  --edit-task-popup-wrapper-width: var(--popup-wrapper-width);
+  --edit-task-popup-input-margin-bottom: var(--popup-input-margin-bottom);
 }

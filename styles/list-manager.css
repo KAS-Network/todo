@@ -132,29 +132,29 @@
 }
 
 .user-list__name {
-  width: 100%;
+  flex-grow: 1;
   text-overflow: ellipsis;
   text-wrap: nowrap;
   line-height: 100%;
   font-weight: var(--user-list-name-font-weight);
   font-size: var(--user-list-name-font-size);
   overflow: hidden;
-  transition: width var(--user-list-name-width-transition-duration) ease-in-out;
-}
-
-.user-list:hover .user-list__name {
-  width: calc(100% - 62px);
 }
 
 .user-list__control {
   display: flex;
+  flex-shrink: 0;
+  margin-left: 0;
   width: 0;
   overflow: hidden;
-  transition: width var(--user-list-control-width-transition-duration) ease-in-out;
+  transition:
+    width var(--user-list-control-width-transition-duration) ease-in-out,
+    margin-left var(--user-list-control-width-transition-duration) ease-in-out;
 }
 
 .user-list:hover .user-list__control {
-  width: 52px
+  margin-left: 10px;
+  width: 52px;
 }
 
 .user-list__btn {

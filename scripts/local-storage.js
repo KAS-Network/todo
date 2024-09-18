@@ -2,6 +2,9 @@ export function dbInit() {
   if (!localStorage.getItem("lists")) {
     localStorage.setItem("lists", JSON.stringify([]));
   }
+  if (!localStorage.getItem("tasks")) {
+    localStorage.setItem("tasks", JSON.stringify([]));
+  }
 }
 
 export function getAllLists() {
@@ -39,5 +42,48 @@ export function deleteListById(listId) {
   if (targetListIndex !== -1) {
     lists.splice(targetListIndex, 1);
     localStorage.setItem("lists", JSON.stringify(lists));
+    const tasks = getAllTasks().filter(task => task.listId !== listId);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+}
+
+export function getAllTasks() {
+  return JSON.parse(localStorage.getItem("tasks"));
+}
+
+export function getAllTasksByListId(listId) {
+  return JSON.parse(localStorage.getItem("tasks")).filter(task => task.listId === listId);
+}
+
+export function dbAddNewTask(listId, taskText) {
+  if (getListById(listId)) {
+    const tasks = getAllTasks();
+    const newTaskId = Date.now().toString();
+    tasks.splice(0, 0, {
+      id: newTaskId,
+      listId,
+      text: taskText,
+      status: "unfulfilled"
+    });
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    return newTaskId;
+  }
+}
+
+export function editTaskTextById(taskId, taskText) {
+  const tasks = getAllTasks();
+  const targetTask = tasks.find(task => task.id === taskId);
+  if (targetTask) {
+    targetTask.text = taskText;
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+}
+
+export function deleteTaskById(taskId) {
+  const tasks = getAllTasks();
+  const targetTaskIndex = tasks.findIndex(task => task.id === taskId);
+  if (targetTaskIndex !== -1) {
+    tasks.splice(targetTaskIndex, 1);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
   }
 }

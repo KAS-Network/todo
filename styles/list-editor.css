@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  width: calc(100% - 2 * var(--container-horizontal-padding) - var(--list-manager-width) - var(--list-manager-margin-right));
 }
 
 .list-editor__header {
@@ -16,8 +17,12 @@
 }
 
 .list-editor__title {
+  line-height: 100%;
   font-weight: var(--list-editor-title-font-weight);
   font-size: var(--list-editor-title-font-size);
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .list-editor__main {
@@ -26,6 +31,9 @@
 
 .task-manager {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   padding: var(--list-editor-padding);
   border-radius: var(--elements-border-radius);
   background-color: var(--elements-bg);
@@ -48,4 +56,200 @@
   text-align: center;
   opacity: var(--task-manager-plug-opacity);
   transform: translate(-50%, -50%);
+}
+
+.task-manager__content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.task-manager__add-task-btn {
+  position: relative;
+  align-self: center;
+  margin-bottom: var(--add-task-btn-margin-bottom);
+  padding-left: 40px;
+}
+
+.task-manager__add-task-btn::before,
+.task-manager__add-task-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  background-color: var(--text-color);
+  transform: translateY(-50%);
+}
+
+.task-manager__add-task-btn::before {
+  left: 18px;
+  width: 2px;
+  height: 16px;
+}
+
+.task-manager__add-task-btn::after {
+  left: 11px;
+  width: 16px;
+  height: 2px;
+}
+
+.new-task-popup__wrapper {
+  width: var(--new-task-popup-wrapper-width);
+}
+
+.new-task-popup__input {
+  margin-bottom: var(--new-task-popup-input-margin-bottom);
+}
+
+.task-manager__tasks {
+  display: flex;
+  flex-direction: column;
+  margin: 0 -3px;
+  padding: 3px;
+  height: calc(100vh - 2 * var(--container-vertical-padding) - 2 * var(--list-editor-padding) - var(--list-editor-title-font-size) - var(--list-editor-header-margin-bottom) - 2 * var(--list-editor-padding) - 2 * var(--btn-padding) - var(--btn-font-size) - var(--add-task-btn-margin-bottom));
+  overflow: auto;
+}
+
+.task-manager__unfulfilled-tasks {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.task-manager__task {
+  margin-bottom: var(--task-margin-bottom);
+  border-radius: var(--task-border-radius);
+  box-shadow: var(--task-box-shadow);
+  cursor: pointer;
+  transition:
+    transform var(--task-transform-transition-duration) ease-in-out,
+    box-shadow var(--task-box-shadow-transition-duration) ease-in-out;
+}
+
+.task-manager__task:last-child {
+  margin-bottom: 0;
+}
+
+.task-manager__task:hover {
+  transform: var(--task-hover-transform);
+}
+
+.task-manager__task:active {
+  box-shadow: var(--task-active-box-shadow);
+}
+
+@keyframes task-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes task-collapse {
+  from {
+    margin-bottom: var(--task-margin-bottom);
+    height: calc(2 * var(--task-padding) + max(var(--task-btn-size), var(--task-content-font-size)));
+  }
+
+  to {
+    margin-bottom: 0;
+    height: 0;
+  }
+}
+
+.task-manager__task_fade-out {
+  animation-name: task-fade-out;
+  animation-duration: var(--task-fade-out-duration);
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.task-manager__task_collapse {
+  opacity: 0;
+  animation-name: task-collapse;
+  animation-duration: var(--task-collapse-duration);
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.task-manager__task-wrapper {
+  display: flex;
+  align-items: center;
+  padding: var(--task-padding);
+}
+
+.task-manager__task-done-btn {
+  flex-shrink: 0;
+  margin-right: var(--task-btn-margin-right);
+  width: var(--task-btn-size);
+  height: var(--task-btn-size);
+  border-radius: var(--task-done-btn-border-radius);
+  border: var(--task-done-btn-border);
+}
+
+.task-manager__task-done-btn:hover {
+  background-color: var(--task-btn-hover-bg-color);
+}
+
+.task-manager__task-content {
+  flex-grow: 1;
+  line-height: 100%;
+  font-weight: var(--task-content-font-weight);
+  font-size: var(--task-content-font-size);
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.task-manager__task-control {
+  display: flex;
+  flex-shrink: 0;
+  margin-left: 0;
+  width: 0;
+  overflow: hidden;
+  transition:
+    width var(--task-control-width-transition-duration) ease-in-out,
+    margin-left var(--task-control-width-transition-duration) ease-in-out;
+}
+
+.task-manager__task:hover .task-manager__task-control {
+  margin-left: 10px;
+  width: 52px;
+}
+
+.task-manager__task-edit-btn, .task-manager__task-delete-btn {
+  flex-shrink: 0;
+  margin-right: var(--task-btn-margin-right);
+  width: var(--task-btn-size);
+  height: var(--task-btn-size);
+  border-radius: 2px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.task-manager__task-edit-btn:hover, .task-manager__task-delete-btn:hover {
+  background-color: var(--task-btn-hover-bg-color);
+}
+
+.task-manager__task-edit-btn:active, .task-manager__task-delete-btn:active {
+  background-color: var(--task-btn-active-bg-color);
+}
+
+.task-manager__task-edit-btn {
+  background-image: url("../images/rename-icon.svg");
+}
+
+.task-manager__task-delete-btn {
+  background-image: url("../images/delete-icon.svg");
+}
+
+.edit-task-popup__wrapper {
+  width: var(--edit-task-popup-wrapper-width);
+}
+
+.edit-task-popup__input {
+  margin-bottom: var(--edit-task-popup-input-margin-bottom);
 }

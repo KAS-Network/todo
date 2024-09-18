@@ -10,7 +10,8 @@ import {
 } from "./local-storage.js";
 import {
   updateListEditorTitle,
-  createTaskManagerContent
+  createTaskManagerContent,
+  createTaskManagerPlug
 } from "./list-editor.js";
 
 function onRenameListPopupNameInput(input) {
@@ -96,6 +97,8 @@ function onListDeleteBtnClick(click) {
       userList.remove();
     }
   });
+  const taskManager = document.querySelector(".task-manager");
+  taskManager.replaceChildren(createTaskManagerPlug());
   deleteListById(userList.dataset.id);
 }
 
